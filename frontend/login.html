@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-visual">
+    <div class="ambient-field" data-ambient></div>
+    <div class="auth-visual-copy fade-up">
+      <div class="twin-thread" data-twin-thread style="margin-bottom:36px;"></div>
+      <h2>Welcome back to yourself.</h2>
+      <p>Your twin has kept learning since you last checked in. Log in to see what it noticed.</p>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card fade-up">
+      <a href="index.html" class="brand">
+        <svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg>
+        <span>Digital Twin</span>
+      </a>
+      <h1>Log in</h1>
+      <p>Pick up right where your twin left off.</p>
+
+      <form id="loginForm" novalidate>
+        <div class="form-alert" role="alert"></div>
+        <div class="field">
+          <label for="loginEmail">Email address</label>
+          <input type="email" id="loginEmail" required placeholder="you@domain.com">
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required placeholder="••••••••••">
+        </div>
+        <div class="field-row">
+          <label class="checkbox-row"><input type="checkbox"> Keep me logged in</label>
+          <a href="#" class="form-link" style="font-size:13.5px;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+
+      <div class="auth-divider">OR CONTINUE WITH</div>
+      <div class="oauth-row">
+        <button class="oauth-btn">🅶 Google</button>
+        <button class="oauth-btn">🅰 Apple</button>
+      </div>
+
+      <div class="auth-foot">New here? <a href="signup.html" class="form-link">Create your twin</a></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script src="js/animation.js?v=8"></script>
+<script>
+  DTAnim.mountTwinThread('[data-twin-thread]');
+  DTAnim.mountAmbientField('[data-ambient]', 16);
+  DT.initAuthForm('loginForm', 'dashboard.html');
+</script>
+</body>
+</html>

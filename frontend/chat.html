@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/chat.css?v=9">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div class="chat-shell">
+  <aside class="convo-rail" data-convo-rail>
+    <div class="convo-rail-head">
+      <a href="dashboard.html" class="brand" style="margin-bottom:16px;"><svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg><span>Digital Twin</span></a>
+      <button class="new-chat-btn" data-new-chat>+ New conversation</button>
+    </div>
+    <div class="convo-list" data-convo-list></div>
+    <div class="rail-foot" style="padding:16px 20px;">
+      <div class="avatar"></div>
+      <div class="who"><div class="name">&nbsp;</div><div class="plan">&nbsp;</div></div>
+      <a href="#" data-logout title="Log out" style="margin-left:auto;opacity:.6;">⏻</a>
+    </div>
+  </aside>
+
+  <div class="chat-main">
+    <div class="chat-topbar">
+      <div class="who">
+        <button class="convo-toggle" data-convo-toggle aria-label="Show conversations">☰</button>
+        <div class="thread-badge"><div class="core"></div></div>
+        <div>
+          <div class="name" data-chat-title>Your Twin</div>
+          <div class="status" data-chat-status>&nbsp;</div>
+        </div>
+      </div>
+      <a href="settings.html" class="btn btn-ghost btn-sm">Twin settings</a>
+    </div>
+
+    <div class="chat-scroll" data-chat-scroll></div>
+
+    <div class="chat-composer">
+      <form data-composer-form>
+        <div class="composer-box">
+          <textarea data-composer-input rows="1" placeholder="Ask your twin anything about your past…"></textarea>
+          <button type="submit" class="send-btn" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </form>
+      <div class="composer-hint">Enter to send · Shift + Enter for a new line</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script>
+  DT.initAuthGuard('login.html');
+  DT.initLogout();
+  DT.initChat();
+</script>
+</body>
+</html>

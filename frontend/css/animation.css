@@ -1,0 +1,151 @@
+/* ============================================================
+   ANIMATION.CSS — the "twin thread" motif + shared keyframes
+   ============================================================ */
+
+@keyframes pulse-glow{
+  0%, 100%{ box-shadow: 0 0 0 0 rgba(110,231,192,0.45); }
+  50%{ box-shadow: 0 0 0 10px rgba(110,231,192,0); }
+}
+@keyframes drift{
+  0%{ transform: translate(0,0); }
+  50%{ transform: translate(10px,-14px); }
+  100%{ transform: translate(0,0); }
+}
+@keyframes fade-up{
+  from{ opacity: 0; transform: translateY(18px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+@keyframes rotate-slow{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+@keyframes thread-flow{
+  0%{ stroke-dashoffset: 24; }
+  100%{ stroke-dashoffset: 0; }
+}
+@keyframes twin-breathe{
+  0%, 100%{ transform: scale(1); opacity: .9; }
+  50%{ transform: scale(1.06); opacity: 1; }
+}
+@keyframes shimmer{
+  0%{ background-position: -200% 0; }
+  100%{ background-position: 200% 0; }
+}
+@keyframes typing-dot{
+  0%, 60%, 100%{ transform: translateY(0); opacity: .4; }
+  30%{ transform: translateY(-5px); opacity: 1; }
+}
+
+.fade-up{ animation: fade-up .7s var(--ease) both; }
+.fade-up-d1{ animation-delay: .08s; }
+.fade-up-d2{ animation-delay: .16s; }
+.fade-up-d3{ animation-delay: .24s; }
+.fade-up-d4{ animation-delay: .32s; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
+
+/* --- The Twin Thread: two orbs pulsing in sync, connected --- */
+.twin-thread{
+  position: relative;
+  width: 220px; height: 220px;
+}
+.twin-thread svg{ width: 100%; height: 100%; overflow: visible; }
+.twin-thread .orb-you{
+  fill: var(--human);
+  filter: drop-shadow(0 0 14px rgba(255,139,94,0.55));
+  animation: twin-breathe 3.2s ease-in-out infinite;
+}
+.twin-thread .orb-twin{
+  fill: var(--twin);
+  filter: drop-shadow(0 0 18px rgba(110,231,192,0.6));
+  animation: twin-breathe 3.2s ease-in-out infinite .55s;
+}
+.twin-thread .thread-line{
+  stroke: url(#threadGradient);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 6;
+  fill: none;
+  animation: thread-flow 1.4s linear infinite;
+}
+.twin-thread .thread-particle{
+  fill: var(--text);
+  opacity: .8;
+}
+
+/* --- small inline twin-thread badge used as avatar/loader --- */
+.thread-badge{
+  position: relative;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.thread-badge::before{
+  content:'';
+  position: absolute; inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid var(--twin);
+  opacity: .5;
+  animation: pulse-glow 2.2s ease-out infinite;
+}
+.thread-badge .core{
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #C9FFEE, var(--twin) 60%);
+}
+
+/* --- ambient background particles (hero / building page) --- */
+.ambient-field{
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient-field span{
+  position: absolute;
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: var(--twin);
+  opacity: .5;
+  animation: drift 6s ease-in-out infinite;
+}
+
+/* --- building/onboarding progress ring --- */
+.progress-ring{
+  position: relative;
+  width: 260px; height: 260px;
+  display: flex; align-items: center; justify-content: center;
+}
+.progress-ring svg{ width: 100%; height: 100%; transform: rotate(-90deg); }
+.progress-ring .track{ stroke: var(--line); fill: none; stroke-width: 6; }
+.progress-ring .bar{
+  stroke: var(--twin);
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s var(--ease);
+  filter: drop-shadow(0 0 8px rgba(110,231,192,0.5));
+}
+.progress-ring .ring-label{
+  position: absolute; text-align: center;
+}
+.progress-ring .ring-label .pct{
+  font-family: var(--font-display);
+  font-size: 40px; color: var(--twin);
+  display: block;
+}
+.progress-ring .ring-label .txt{
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: .08em;
+}
+
+/* --- shimmer skeleton loader --- */
+.skeleton{
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+  border-radius: var(--radius-sm);
+}

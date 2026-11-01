@@ -1,0 +1,53 @@
+/* ============================================================
+   RESPONSIVE.CSS — loaded last, overrides at narrower widths
+   ============================================================ */
+
+/* ---- large tablets / small laptops ---- */
+@media (max-width: 1100px){
+  .feature-grid{ grid-template-columns: repeat(2, 1fr); }
+  .flow{ grid-template-columns: repeat(2, 1fr); }
+  .grid-4{ grid-template-columns: repeat(2, 1fr); }
+  .grid-3{ grid-template-columns: repeat(2, 1fr); }
+  .graph-shell{ grid-template-columns: 1fr; }
+  .graph-canvas-wrap{ height: 440px; }
+  .connector-grid{ grid-template-columns: repeat(2, 1fr); }
+  .app-shell{ grid-template-columns: 76px 1fr; }
+  .rail{ padding: 20px 12px; }
+  .rail .brand span, .rail-nav a span, .rail .rail-foot .who, .rail-section-label{ display: none; }
+  .rail-nav a{ justify-content: center; }
+  .rail .rail-foot{ justify-content: center; }
+}
+
+/* ---- tablets ---- */
+@media (max-width: 860px){
+  .site-header .nav-links{ display: none; }
+  .hero .container{ grid-template-columns: 1fr; text-align: left; }
+  .hero-visual{ order: -1; max-width: 280px; margin: 0 auto 20px; }
+  .auth-shell{ grid-template-columns: 1fr; }
+  .auth-visual{ display: none; }
+  .settings-layout{ grid-template-columns: 1fr; }
+  .settings-nav{ flex-direction: row; overflow-x: auto; padding-bottom: 8px; }
+  .chat-shell{ grid-template-columns: 1fr; }
+  .convo-rail{ display: none; }
+  .stat-strip .container{ justify-content: flex-start; gap: 40px; }
+}
+
+/* ---- phones ---- */
+@media (max-width: 600px){
+  .container{ padding: 0 20px; }
+  .hero{ padding: 70px 0 60px; }
+  .section{ padding: 70px 0; }
+  .feature-grid, .flow, .grid-4, .grid-3, .grid-2, .connector-grid{ grid-template-columns: 1fr; }
+  .main{ padding: 24px 18px 50px; }
+  .app-shell{ grid-template-columns: 1fr; }
+  .rail{ display: none; }
+  .topbar{ flex-direction: column; align-items: flex-start; }
+  .search-box{ min-width: 0; width: 100%; }
+  .chat-scroll{ padding: 22px 18px; }
+  .graph-canvas-wrap{ height: 520px; }
+  .chat-composer{ padding: 14px 18px 20px; }
+  .msg{ max-width: 88%; }
+  .oauth-row{ grid-template-columns: 1fr; }
+  .footer-cols{ gap: 32px; }
+  .footer-bottom{ flex-direction: column; gap: 8px; }
+}

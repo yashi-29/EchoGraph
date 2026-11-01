@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect your sources — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/connector.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div style="max-width:900px;margin:0 auto;padding:60px 32px 100px;">
+  <a href="index.html" class="brand" style="margin-bottom:40px;display:inline-flex;">
+    <svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg>
+    <span>Digital Twin</span>
+  </a>
+
+  <span class="eyebrow">Step 1 of 2</span>
+  <h1 class="fade-up" style="font-size:32px;margin-top:12px;">Choose what your twin should learn from.</h1>
+  <p class="fade-up" style="max-width:560px;margin-bottom:32px;">Connect at least one source to begin. You can add or remove sources any time from Settings — nothing here is permanent.</p>
+
+  <div class="form-alert" data-connector-alert style="margin-bottom:20px;"></div>
+
+  <div class="connector-banner">
+    <div class="thread-badge"><div class="core"></div></div>
+    <div>
+      <h4><span data-connected-count>0</span> source(s) connected</h4>
+      <p>Connect at least one to continue building your twin.</p>
+    </div>
+  </div>
+
+  <div class="connector-category-tabs">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="comms">Communication</button>
+    <button class="filter-chip" data-filter="notes">Notes &amp; docs</button>
+    <button class="filter-chip" data-filter="calendar">Calendar</button>
+  </div>
+
+  <div class="connector-grid" data-connector-grid>
+
+    <div class="connector-card" data-name="Gmail" data-category="comms" data-provider="gmail">
+      <div class="connector-top">
+        <div class="connector-icon">✉️</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Gmail</h4>
+        <p>Learn tone, relationships, and decisions from your email history.</p>
+      </div>
+      <button class="connector-toggle-btn">Connect</button>
+    </div>
+
+    <div class="connector-card" data-name="Google Calendar" data-category="calendar" data-provider="google_calendar">
+      <div class="connector-top">
+        <div class="connector-icon">📅</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Google Calendar</h4>
+        <p>Understand your rhythms — meetings, focus time, and recurring events.</p>
+      </div>
+      <button class="connector-toggle-btn">Connect</button>
+    </div>
+
+    <div class="connector-card" data-name="Notion" data-category="notes">
+      <div class="connector-top">
+        <div class="connector-icon">🗒️</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Notion</h4>
+        <p>Index notes, plans, and journals into long-term structured memory.</p>
+      </div>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
+    </div>
+
+    <div class="connector-card" data-name="Slack" data-category="comms">
+      <div class="connector-top">
+        <div class="connector-icon">💬</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Slack</h4>
+        <p>Capture how you communicate and collaborate with your team.</p>
+      </div>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
+    </div>
+
+    <div class="connector-card" data-name="Apple Notes" data-category="notes">
+      <div class="connector-top">
+        <div class="connector-icon">📝</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Apple Notes</h4>
+        <p>Fold quick thoughts and drafts into your twin's memory graph.</p>
+      </div>
+      <button class="connector-toggle-btn" disabled title="Deferred — no cloud API for Apple Notes">Coming soon</button>
+    </div>
+
+    <div class="connector-card" data-name="Outlook Calendar" data-category="calendar">
+      <div class="connector-top">
+        <div class="connector-icon">🗓️</div>
+        <span class="connector-status"><span class="dot"></span> Not connected</span>
+      </div>
+      <div>
+        <h4>Outlook Calendar</h4>
+        <p>Bring in work scheduling patterns from Microsoft 365.</p>
+      </div>
+      <button class="connector-toggle-btn" disabled title="Coming soon">Coming soon</button>
+    </div>
+
+  </div>
+
+  <div style="display:flex;justify-content:space-between;margin-top:40px;">
+    <a href="signup.html" class="btn btn-ghost">← Back</a>
+    <a href="building.html" class="btn btn-primary">Build my twin →</a>
+  </div>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script>
+  DT.initAuthGuard('login.html');
+  DT.initConnectors();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building your twin — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div class="building-shell">
+  <div class="ambient-field" data-ambient></div>
+
+  <span class="eyebrow">Step 2 of 2</span>
+
+  <div class="progress-ring" style="margin-top:20px;">
+    <svg viewBox="0 0 260 260">
+      <circle class="track" cx="130" cy="130" r="118"/>
+      <circle class="bar" data-progress-bar cx="130" cy="130" r="118"/>
+    </svg>
+    <div class="ring-label">
+      <span class="pct" data-progress-pct>0%</span>
+      <span class="txt">Building twin</span>
+    </div>
+  </div>
+
+  <h1>Getting to know you.</h1>
+  <p>This usually takes under two minutes. Your twin is reading, structuring, and connecting your memories right now.</p>
+
+  <div class="build-log">
+    <div class="log-item"><span class="chk">○</span> Connecting to sources securely</div>
+    <div class="log-item"><span class="chk">○</span> Indexing messages and documents</div>
+    <div class="log-item"><span class="chk">○</span> Mapping people, places, and events</div>
+    <div class="log-item"><span class="chk">○</span> Learning your tone and patterns</div>
+    <div class="log-item"><span class="chk">○</span> Finalizing your memory graph</div>
+  </div>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script src="js/animation.js?v=8"></script>
+<script>
+  DTAnim.mountAmbientField('[data-ambient]', 22);
+  DT.initAuthGuard('login.html');
+  DT.initBuildingSequence('dashboard.html');
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+/* ============================================================
+   CHAT.CSS — conversing with your twin
+   ============================================================ */
+
+.chat-shell{
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  /* One viewport-tall row; min 0 so a long conversation list can't stretch the row (and
+     with it the whole page) — the list and the messages each scroll on their own. */
+  grid-template-rows: minmax(0, 1fr);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* --- conversation list rail --- */
+.convo-rail{
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  min-height: 0;
+}
+.convo-rail-head{ padding: 20px; border-bottom: 1px solid var(--line); }
+.convo-rail-head .brand{ margin-bottom: 16px; }
+.new-chat-btn{
+  width: 100%; padding: 11px; border-radius: var(--radius-sm);
+  background: var(--surface-2); border: 1px solid var(--line); color: var(--text);
+  font-size: 13.5px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; justify-content: center;
+  transition: border-color .2s;
+}
+.new-chat-btn:hover{ border-color: var(--twin); color: var(--twin); }
+.convo-list{ flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 10px; }
+.convo-item{
+  padding: 12px; border-radius: var(--radius-sm); margin-bottom: 2px; cursor: pointer;
+  transition: background .2s;
+}
+.convo-item:hover{ background: var(--surface-2); }
+.convo-item.active{ background: rgba(110,231,192,0.1); }
+.convo-item .title{ font-size: 13.5px; color: var(--text); font-weight: 500; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.convo-item .preview{ font-size: 12px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* --- main chat column --- */
+.chat-main{ display: flex; flex-direction: column; height: 100vh; min-height: 0; }
+.chat-topbar{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 28px; border-bottom: 1px solid var(--line);
+  background: rgba(11,14,20,0.6); backdrop-filter: blur(10px);
+}
+.chat-topbar .who{ display: flex; align-items: center; gap: 12px; }
+.chat-topbar .who .name{ font-size: 15px; font-weight: 600; color: var(--text); }
+.chat-topbar .who .status{ font-size: 12px; color: var(--twin); font-family: var(--font-mono); }
+
+.chat-scroll{
+  flex: 1; overflow-y: auto;
+  padding: 32px 40px;
+  display: flex; flex-direction: column; gap: 22px;
+}
+.msg{ display: flex; gap: 14px; max-width: 720px; }
+.msg.from-user{ align-self: flex-end; flex-direction: row-reverse; }
+.msg .bubble{
+  padding: 14px 18px; border-radius: 16px; font-size: 14.5px; line-height: 1.55;
+}
+.msg.from-twin .bubble{
+  background: var(--surface); border: 1px solid var(--line);
+  border-top-left-radius: 4px; color: var(--text);
+}
+.msg.from-user .bubble{
+  background: linear-gradient(135deg, var(--human), var(--human-dim));
+  color: #1A0B04; border-top-right-radius: 4px; font-weight: 500;
+}
+.msg .avatar{
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.msg.from-user .avatar{ background: var(--surface-2); }
+.msg-meta{ font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); margin-top: 6px; }
+
+.typing-indicator{ display: flex; gap: 4px; padding: 6px 4px; }
+.typing-indicator span{
+  width: 6px; height: 6px; border-radius: 50%; background: var(--twin);
+  animation: typing-dot 1.2s infinite;
+}
+.typing-indicator span:nth-child(2){ animation-delay: .15s; }
+.typing-indicator span:nth-child(3){ animation-delay: .3s; }
+
+.chat-source-chip{
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--twin); background: rgba(110,231,192,0.08);
+  border: 1px solid rgba(110,231,192,0.3);
+  padding: 3px 9px; border-radius: 999px; margin-top: 10px;
+}
+
+/* --- composer --- */
+.chat-composer{
+  padding: 18px 40px 26px;
+  border-top: 1px solid var(--line);
+}
+.composer-box{
+  display: flex; align-items: flex-end; gap: 12px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 10px 10px 10px 20px;
+  transition: border-color .2s;
+}
+.composer-box:focus-within{ border-color: var(--twin); }
+.composer-box textarea{
+  flex: 1; background: none; border: none; outline: none; resize: none;
+  color: var(--text); font-family: var(--font-body); font-size: 14.5px;
+  max-height: 140px; padding: 10px 0; line-height: 1.5;
+}
+.composer-box textarea::placeholder{ color: var(--text-muted); }
+.send-btn{
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--twin), #45C4A0);
+  border: none; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform .2s;
+}
+.send-btn:hover{ transform: scale(1.06); }
+.send-btn svg{ width: 17px; height: 17px; color: #04120D; }
+.composer-hint{
+  text-align: center; font-size: 11.5px; color: var(--text-muted);
+  margin-top: 10px; font-family: var(--font-mono);
+}
+
+/* --- conversation list: date groups, hover actions, inline rename --- */
+.convo-group-label{
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-muted); padding: 14px 12px 6px;
+}
+.convo-group-label:first-child{ padding-top: 4px; }
+.convo-item{ position: relative; }
+.convo-item .convo-actions{
+  position: absolute; top: 50%; right: 8px; transform: translateY(-50%);
+  display: none; gap: 2px; background: var(--surface-2); border-radius: 6px; padding: 2px;
+}
+.convo-item:hover .convo-actions, .convo-item.active .convo-actions{ display: flex; }
+.convo-item.active .convo-actions{ background: #1c2d2b; }
+.convo-actions button{
+  width: 26px; height: 26px; border: none; background: none; border-radius: 5px;
+  color: var(--text-muted); cursor: pointer; font-size: 13px; line-height: 1;
+}
+.convo-actions button:hover{ color: var(--text); background: rgba(255,255,255,0.06); }
+.convo-actions button[data-convo-delete]:hover{ color: var(--danger); }
+.convo-item:hover .title, .convo-item.active .title{ padding-right: 60px; }
+.convo-rename{
+  width: 100%; background: var(--ink); border: 1px solid var(--twin); border-radius: 6px;
+  color: var(--text); font: inherit; font-size: 13.5px; padding: 4px 8px; outline: none;
+}
+.convo-list-empty{ padding: 14px 12px; font-size: 12.5px; color: var(--text-muted); }
+
+/* --- empty (new) conversation --- */
+.chat-empty{
+  margin: auto; text-align: center; max-width: 560px; padding: 0 12px; color: var(--text-muted);
+}
+.chat-empty .thread-badge{ margin: 0 auto 22px; }
+.chat-empty h2{
+  font-family: var(--font-display); color: var(--text);
+  font-size: clamp(22px, 2.6vw, 28px); line-height: 1.25; margin: 0 0 12px; text-wrap: balance;
+}
+.chat-empty p{ font-size: 14px; line-height: 1.6; margin: 0; text-wrap: pretty; }
+.chat-empty a{ color: var(--twin); }
+
+/* --- rendered markdown inside twin replies --- */
+.msg .bubble p{ margin: 0 0 10px; }
+.msg .bubble p:last-child, .msg .bubble ul:last-child, .msg .bubble ol:last-child,
+.msg .bubble pre:last-child{ margin-bottom: 0; }
+.msg .bubble ul, .msg .bubble ol{ margin: 0 0 10px; padding-left: 22px; }
+.msg .bubble li{ margin: 2px 0; }
+.msg .bubble h4{ font-size: 15px; margin: 4px 0 8px; color: var(--text); }
+.msg .bubble code{
+  font-family: var(--font-mono); font-size: 12.5px;
+  background: var(--surface-2); padding: 1px 6px; border-radius: 5px;
+}
+.msg .bubble pre{
+  background: var(--ink); border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 14px; overflow-x: auto; margin: 0 0 10px;
+}
+.msg .bubble pre code{ background: none; padding: 0; }
+.msg.from-user .bubble{ white-space: pre-wrap; }
+.msg.is-error .bubble{ border-color: rgba(255,107,107,0.45); color: var(--danger); }
+
+.send-btn:disabled{ opacity: .45; cursor: default; transform: none; }
+
+/* --- mobile: conversation rail as a slide-over --- */
+.convo-toggle{
+  display: none; background: none; border: 1px solid var(--line); color: var(--text);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 15px;
+}
+@media (max-width: 860px){
+  .convo-toggle{ display: inline-flex; align-items: center; justify-content: center; }
+  .convo-rail.open{
+    display: flex; position: fixed; top: 0; bottom: 0; left: 0; width: min(300px, 85vw);
+    z-index: 50; box-shadow: var(--shadow-card);
+  }
+}
+.msg .bubble p{ color: inherit; font-size: inherit; line-height: inherit; }
+.convo-item:hover .preview, .convo-item.active .preview{ padding-right: 60px; }
+
+/* --- topbar/composer polish --- */
+.chat-topbar{ gap: 16px; }
+.chat-topbar .who{ min-width: 0; }
+.chat-topbar .who > div:last-child{ min-width: 0; }
+.chat-topbar .who .name{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chat-topbar .who .status{ white-space: nowrap; }
+.chat-topbar .btn{ flex-shrink: 0; }
+.composer-box textarea::placeholder{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+@media (max-width: 600px){
+  .chat-topbar{ padding: 12px 16px; }
+  .chat-topbar .who{ gap: 10px; }
+  .chat-topbar .thread-badge{ display: none; }
+  .chat-topbar .btn{ padding: 7px 12px; font-size: 12px; }
+  .composer-hint{ display: none; }
+  .chat-composer{ padding-bottom: 16px; }
+  .chat-empty h2{ font-size: 22px; }
+}
+
+/* --- structured memory results (search_memory tool citations) --- */
+.memory-results{
+  margin-top: 12px; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  overflow: hidden; background: var(--surface-2);
+}
+.memory-results-head{
+  padding: 8px 14px; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: .04em; text-transform: uppercase; color: var(--twin);
+  border-bottom: 1px solid var(--line);
+}
+.memory-result{
+  display: flex; gap: 12px; padding: 12px 14px;
+  border-bottom: 1px solid var(--line); transition: background .15s;
+}
+.memory-result:last-child{ border-bottom: none; }
+.memory-result:hover{ background: rgba(110,231,192,0.06); }
+.memory-result-icon{
+  width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(110,231,192,0.12); color: var(--twin);
+}
+.memory-result-icon svg{ width: 15px; height: 15px; }
+.memory-result-body{ min-width: 0; flex: 1; }
+.memory-result-top{ display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.memory-result-title{
+  font-size: 13.5px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.memory-result-date{
+  font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);
+  flex-shrink: 0; white-space: nowrap;
+}
+.memory-result-source{
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--twin); margin: 1px 0 4px;
+}
+.memory-result-snippet{
+  font-size: 12.5px; color: var(--text-muted); line-height: 1.45;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}

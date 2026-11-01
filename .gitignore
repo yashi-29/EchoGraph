@@ -1,0 +1,25 @@
+# Environment
+.env
+*.env
+!env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Docker
+db_data/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local sprint prompt documents (never commit these)
+Engram-Sprints/

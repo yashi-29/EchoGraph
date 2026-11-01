@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Graph — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/dashboard.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="rail">
+    <a href="index.html" class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg><span>Digital Twin</span></a>
+    <nav class="rail-nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg><span>Dashboard</span></a>
+      <a href="chat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Chat</span></a>
+      <a href="timeline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="4" x2="4" y2="20"/><circle cx="4" cy="8" r="1.5"/><circle cx="4" cy="14" r="1.5"/><circle cx="4" cy="20" r="1.5"/><line x1="9" y1="8" x2="20" y2="8"/><line x1="9" y1="14" x2="20" y2="14"/><line x1="9" y1="20" x2="20" y2="20"/></svg><span>Timeline</span></a>
+      <a href="graph.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="12" y1="7.5" x2="5" y2="16.5"/><line x1="12" y1="7.5" x2="19" y2="16.5"/></svg><span>Graph</span></a>
+      <a href="search.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Search</span></a>
+      <a href="reflection.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg><span>Reflections</span></a>
+      <div class="rail-section-label">Manage</div>
+      <a href="connectors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8.5 8.5 15.5 15.5"/></svg><span>Connectors</span></a>
+      <a href="uploads.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><span>Uploads</span></a>
+      <a href="settings.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg><span>Settings</span></a>
+    </nav>
+    <div class="rail-foot">
+      <div class="avatar"></div>
+      <div class="who"><div class="name">&nbsp;</div><div class="plan">&nbsp;</div></div>
+      <a href="#" data-logout title="Log out" style="margin-left:auto;opacity:.6;">⏻</a>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:1300px;">
+    <div class="topbar">
+      <div>
+        <h1>Knowledge graph</h1>
+        <div class="sub">Every person, organization and topic your twin has found in your memories. Click a node to explore it.</div>
+      </div>
+    </div>
+
+    <div class="graph-shell">
+      <div class="graph-canvas-wrap">
+        <canvas data-graph-canvas aria-label="Knowledge graph"></canvas>
+        <div class="graph-overlay" data-graph-overlay hidden></div>
+        <div class="graph-legend" data-graph-legend></div>
+      </div>
+
+      <div class="node-panel">
+        <div class="card" data-node-detail>
+          <div class="card-head"><h3>Node detail</h3></div>
+          <p class="node-intro">Loading…</p>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>How this graph is built</h3></div>
+          <div class="graph-about" data-graph-about></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script src="js/graph.js?v=9"></script>
+<script>
+  DT.initAuthGuard('login.html');
+  DT.initLogout();
+  DTGraph.init();
+</script>
+</body>
+</html>

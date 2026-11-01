@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create your twin — Digital Twin</title>
+<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/animation.css?v=8">
+<link rel="stylesheet" href="css/responsive.css?v=8">
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-visual">
+    <div class="ambient-field" data-ambient></div>
+    <div class="auth-visual-copy fade-up">
+      <div class="twin-thread" data-twin-thread style="margin-bottom:36px;"></div>
+      <h2>Two minutes to build. Yours forever.</h2>
+      <p>Connect a few sources, and your twin starts learning immediately — private, encrypted, and fully deletable at any time.</p>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card fade-up">
+      <a href="index.html" class="brand">
+        <svg class="mark" viewBox="0 0 24 24" fill="none"><circle cx="7" cy="12" r="5" fill="#FF8B5E"/><circle cx="17" cy="12" r="5" fill="#6EE7C0"/></svg>
+        <span>Digital Twin</span>
+      </a>
+      <h1>Create your twin</h1>
+      <p>Start free — no credit card required.</p>
+
+      <form id="signupForm" novalidate>
+        <div class="form-alert" role="alert"></div>
+        <div class="field">
+          <label for="signupName">Full name</label>
+          <input type="text" id="signupName" required placeholder="Your name" maxlength="100" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="signupEmail">Email address</label>
+          <input type="email" id="signupEmail" required placeholder="you@domain.com">
+        </div>
+        <div class="field">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required placeholder="At least 8 characters">
+          <div class="field-hint">Use a mix of letters, numbers, and symbols.</div>
+        </div>
+        <div class="field-row" style="margin-bottom:20px;">
+          <label class="checkbox-row"><input type="checkbox" required> I agree to the Terms and Privacy Policy</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create my twin</button>
+      </form>
+
+      <div class="auth-divider">OR CONTINUE WITH</div>
+      <div class="oauth-row">
+        <button class="oauth-btn">🅶 Google</button>
+        <button class="oauth-btn">🅰 Apple</button>
+      </div>
+
+      <div class="auth-foot">Already have a twin? <a href="login.html" class="form-link">Log in</a></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js?v=9"></script>
+<script src="js/animation.js?v=8"></script>
+<script>
+  DTAnim.mountTwinThread('[data-twin-thread]');
+  DTAnim.mountAmbientField('[data-ambient]', 16);
+  DT.initAuthForm('signupForm', 'connectors.html');
+</script>
+</body>
+</html>

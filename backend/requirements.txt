@@ -1,0 +1,25 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+pydantic-settings==2.7.0
+email-validator==2.2.0
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.10
+pgvector==0.3.6
+numpy==2.4.6
+alembic==1.14.0
+celery==5.4.0
+redis==5.2.1
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1  # passlib 1.7.4 is incompatible with bcrypt>=4.1's removed __about__ module
+anthropic==0.42.0
+httpx==0.28.1  # OAuth token exchange / userinfo calls to connector providers
+voyageai==0.5.0  # embeddings for memory_items.embedding
+groq==1.7.0  # chat generation (openai/gpt-oss-120b) and voice-note transcription (Whisper)
+pypdf==6.19.0  # text extraction from uploaded PDFs
+pillow==12.3.0  # decoding uploaded images (also pulled in by voyageai)
+pillow-heif==1.8.1  # lets Pillow open iPhone .heic/.heif photos
+pytesseract==0.3.13  # OCR on uploaded images; needs the tesseract-ocr binary (see Dockerfile)
+python-multipart==0.0.32  # FastAPI multipart parsing for file uploads
+tzdata==2025.2  # IANA zones for zoneinfo on slim images / Windows (chat resolves dates in the user's zone)

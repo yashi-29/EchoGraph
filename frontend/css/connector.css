@@ -1,0 +1,63 @@
+/* ============================================================
+   CONNECTOR.CSS — data source connection micro-styles
+   (extends .connector-card / .connector-grid from dashboard.css)
+   ============================================================ */
+
+.connector-category-tabs{
+  display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.connector-category-tabs .filter-chip{ font-family: var(--font-mono); font-size: 12px; }
+
+.connector-sync-bar{
+  height: 4px; border-radius: 999px; background: var(--line); overflow: hidden;
+}
+.connector-sync-bar .fill{
+  height: 100%; background: linear-gradient(90deg, var(--twin-dim), var(--twin));
+  border-radius: 999px; transition: width .6s var(--ease);
+}
+.connector-sync-label{
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* --- permission consent modal --- */
+.modal-overlay{
+  position: fixed; inset: 0; background: rgba(6,8,12,0.7);
+  backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center; z-index: 200;
+}
+.modal-overlay.open{ display: flex; }
+.modal-card{
+  width: 100%; max-width: 420px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); padding: 28px;
+  animation: fade-up .35s var(--ease);
+}
+.modal-card h3{ font-size: 19px; margin-bottom: 8px; }
+.modal-card p{ font-size: 13.5px; }
+.modal-scope-list{ margin: 18px 0; display: flex; flex-direction: column; gap: 10px; }
+.modal-scope-list li{
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13.5px; color: var(--text);
+}
+.modal-scope-list li svg{ width: 15px; height: 15px; color: var(--twin); flex-shrink: 0; }
+.modal-actions{ display: flex; gap: 12px; margin-top: 22px; }
+.modal-actions .btn{ flex: 1; }
+.modal-close{
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; color: var(--text-muted); cursor: pointer;
+  width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%;
+}
+.modal-close:hover{ background: var(--surface-2); color: var(--text); }
+.modal-card{ position: relative; }
+
+/* connector empty / all-set banner */
+.connector-banner{
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 24px; border-radius: var(--radius-md);
+  background: rgba(110,231,192,0.06); border: 1px solid rgba(110,231,192,0.25);
+  margin-bottom: 28px;
+}
+.connector-banner h4{ font-size: 15px; margin: 0 0 2px; color: var(--text); }
+.connector-banner p{ font-size: 13px; margin: 0; }
