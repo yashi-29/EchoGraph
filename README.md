@@ -119,8 +119,8 @@ from environment variables and are never committed; see `.env.example`.
 ## Contributors
 
 Built by Yashi Mishra ([@yashi-29](https://github.com/yashi-29)) together with Aditya
-Kumarkhaniya ([@aditya-121105](https://github.com/aditya-121105)). The full commit
-history is preserved in this repository.
+Kumarkhaniya. This repository starts from a fresh snapshot of the project, so earlier
+per-commit history is not included here.
 
 ## License
 
