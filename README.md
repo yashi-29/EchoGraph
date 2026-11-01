@@ -2,11 +2,34 @@
   <img src="docs/figures/banner.svg" alt="EchoGraph: grounded question answering and confirmation-gated actions over a person's own data" width="100%">
 </p>
 
+<div align="center">
+
 # EchoGraph
 
 **Grounded question answering and confirmation-gated actions over a person's own data.**
 
-Yashi Mishra and Aditya Kumarkhaniya · research prototype · 2026
+[![Status](https://img.shields.io/badge/status-research%20prototype-8c2d2d?style=flat-square)](#5-limitations-and-threats-to-validity)
+[![License](https://img.shields.io/badge/license-MIT-59636e?style=flat-square)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-161%20functions-2f5d8a?style=flat-square)](#32-test-suite-and-code-composition)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-336791?style=flat-square)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+
+[Abstract](#abstract) ·
+[Research questions](#1-motivation-and-research-questions) ·
+[System](#2-system) ·
+[Observations](#3-preliminary-observations) ·
+[Limitations](#5-limitations-and-threats-to-validity) ·
+[Reproduce](#7-reproducing)
+
+<br>
+
+<img src="docs/figures/at-a-glance.svg" alt="Key measured numbers: 161 test functions, 40 API routes, 7,166 lines of backend Python, 1,024 embedding dimensions, RRF constant 60, semantic floor 0.36" width="100%">
+
+</div>
 
 ---
 
@@ -61,8 +84,28 @@ and camera. Voice notes are transcribed with Whisper. Embeddings come from `voya
 by source, date or user and rank by vector distance. The knowledge graph is kept as node and
 edge tables in the same database. Connector tokens are encrypted at rest.
 
-This design answers RQ1 by construction, not by experiment: we chose the single-store option
-and have not yet compared it against a split architecture (see Section 5).
+> [!NOTE]
+> This design answers RQ1 by construction, not by experiment: we chose the single-store
+> option and have not yet compared it against a split architecture (see Section 5).
+
+<details>
+<summary>Software stack</summary>
+
+<br>
+
+| Concern | Choice |
+|---|---|
+| API | FastAPI (async), SQLAlchemy 2, Alembic |
+| Storage | PostgreSQL with `pgvector` |
+| Background jobs | Celery with Redis |
+| Embeddings | Voyage `voyage-4`, 1,024 dimensions |
+| Chat generation | Groq-hosted `openai/gpt-oss-120b` |
+| Voice transcription | Groq-hosted Whisper (`whisper-large-v3-turbo`) |
+| Documents | pypdf, `.docx`, text and markdown, Netscape bookmark exports |
+| Images | Pillow, pillow-heif, Tesseract OCR |
+| Frontend | Static HTML, CSS and JavaScript served by nginx |
+
+</details>
 
 ### 2.2 Hybrid retrieval
 
@@ -116,10 +159,11 @@ A floor of 0.36 separates the weakest genuine matches (about 0.39) from the stro
 (about 0.32). Because the best score varies by query, the implementation also trims the tail
 adaptively: a hit is kept only if its similarity is at least `max(0.36, best − 0.18)`.
 
-**Caveat.** These are ranges observed while tuning, not a measured distribution. The
-queries were few, hand-picked and from a single user, so the 0.36 gap should be read as a
-working threshold, not a general result. A proper study would sample queries systematically
-and report precision and recall at several floors.
+> [!CAUTION]
+> These are ranges observed while tuning, not a measured distribution. The queries were few,
+> hand-picked and from a single user, so the 0.36 gap should be read as a working threshold,
+> not a general result. A proper study would sample queries systematically and report
+> precision and recall at several floors.
 
 ### 3.2 Test suite and code composition
 
@@ -144,6 +188,10 @@ and account-deletion endpoints. The stack is containerised end to end (FastAPI, 
 Postgres with `pgvector`, Redis, nginx).
 
 ## 5. Limitations and threats to validity
+
+> [!WARNING]
+> EchoGraph is a research prototype. Retrieval quality has not been benchmarked, and all
+> tuning so far used a single user's data.
 
 - **No retrieval benchmark.** The only retrieval measurement is the calibration in Section
   3.1. There is no labelled query set, so we cannot report recall@k, MRR, or answer quality.

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 150" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<rect x="0.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="0.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="100.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">161</text>
+<text x="100.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">test functions</text>
+<rect x="216.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="216.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="316.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">40</text>
+<text x="316.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">API routes</text>
+<rect x="432.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="432.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="532.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">7,166</text>
+<text x="532.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">lines of backend Python</text>
+<rect x="648.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="648.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="748.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">1,024</text>
+<text x="748.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">embedding dimensions</text>
+<rect x="864.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="864.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="964.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">k = 60</text>
+<text x="964.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">RRF constant</text>
+<rect x="1080.0" y="0" width="200.0" height="150" rx="10" fill="#14181f"/>
+<rect x="1080.0" y="0" width="5" height="150" rx="2" fill="#d9534f"/>
+<text x="1180.0" y="78" font-size="40" font-weight="700" fill="#ffffff" text-anchor="middle">0.36</text>
+<text x="1180.0" y="112" font-size="15" fill="#9aa4b2" text-anchor="middle">semantic similarity floor</text>
+</svg>
