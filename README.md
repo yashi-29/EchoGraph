@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/figures/banner.svg" alt="EchoGraph: grounded question answering and confirmation-gated actions over a person's own data" width="100%">
+</p>
+
 # EchoGraph
 
 **Grounded question answering and confirmation-gated actions over a person's own data.**

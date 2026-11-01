@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <rect width="1280" height="300" rx="12" fill="#14181f"/>
+  <g stroke="#3a4352" stroke-width="1.5" fill="none">
+    <path d="M820 70 L930 140 L1050 85 L1160 170 L1040 235 L930 140 L1040 235 L900 250 L820 70"/>
+    <path d="M1050 85 L1160 170"/>
+    <path d="M930 140 L1160 170"/>
+  </g>
+  <g fill="#14181f" stroke="#8c2d2d" stroke-width="2.5">
+    <circle cx="930" cy="140" r="15"/>
+  </g>
+  <circle cx="930" cy="140" r="6" fill="#d9534f"/>
+  <g fill="#14181f" stroke="#9aa4b2" stroke-width="2">
+    <circle cx="820" cy="70" r="9"/>
+    <circle cx="1050" cy="85" r="11"/>
+    <circle cx="1160" cy="170" r="9"/>
+    <circle cx="1040" cy="235" r="10"/>
+    <circle cx="900" cy="250" r="7"/>
+  </g>
+  <text x="64" y="125" font-size="70" font-weight="700" fill="#ffffff" letter-spacing="-1">EchoGraph</text>
+  <text x="66" y="170" font-size="24" fill="#c5ccd6">Grounded question answering and confirmation-gated</text>
+  <text x="66" y="202" font-size="24" fill="#c5ccd6">actions over a person's own data</text>
+  <line x1="66" y1="228" x2="146" y2="228" stroke="#d9534f" stroke-width="3"/>
+  <text x="66" y="258" font-size="16" fill="#8b95a5" letter-spacing="1.5">RESEARCH PROTOTYPE  ·  HYBRID RETRIEVAL  ·  KNOWLEDGE GRAPH  ·  PGVECTOR</text>
+</svg>
