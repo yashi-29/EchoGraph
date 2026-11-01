@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<rect width="1000" height="470" fill="#ffffff"/>
+<rect x="300" y="70" width="339.4" height="290" fill="#fbeaea"/>
+<line x1="300.0" y1="70" x2="300.0" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="300.0" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.0</text>
+<line x1="394.3" y1="70" x2="394.3" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="394.2857142857143" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.1</text>
+<line x1="488.6" y1="70" x2="488.6" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="488.57142857142856" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.2</text>
+<line x1="582.9" y1="70" x2="582.9" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="582.8571428571429" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.3</text>
+<line x1="677.1" y1="70" x2="677.1" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="677.1428571428571" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.4</text>
+<line x1="771.4" y1="70" x2="771.4" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="771.4285714285714" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.5</text>
+<line x1="865.7" y1="70" x2="865.7" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="865.7142857142858" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.6</text>
+<line x1="960.0" y1="70" x2="960.0" y2="360" stroke="#d0d7de" stroke-width="1"/>
+<text x="960.0" y="384" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >0.7</text>
+<line x1="300" y1="360" x2="960" y2="360" stroke="#1f2328" stroke-width="1.5"/>
+<text x="282" y="118" font-size="17" fill="#1f2328" text-anchor="end" font-weight="600" >Genuine query</text>
+<text x="282" y="140" font-size="13" fill="#59636e" text-anchor="end" font-weight="400" >best match</text>
+<line x1="790.3" y1="120" x2="875.1" y2="120" stroke="#8c2d2d" stroke-width="3"/>
+<circle cx="790.3" cy="120" r="7" fill="#8c2d2d"/>
+<circle cx="875.1" cy="120" r="7" fill="#8c2d2d"/>
+<text x="891.1428571428571" y="125" font-size="15" fill="#8c2d2d" text-anchor="start" font-weight="600" >0.52 – 0.61</text>
+<text x="282" y="213" font-size="17" fill="#1f2328" text-anchor="end" font-weight="600" >Genuine query</text>
+<text x="282" y="235" font-size="13" fill="#59636e" text-anchor="end" font-weight="400" >related items</text>
+<line x1="667.7" y1="215" x2="790.3" y2="215" stroke="#2f5d8a" stroke-width="3"/>
+<circle cx="667.7" cy="215" r="7" fill="#2f5d8a"/>
+<circle cx="790.3" cy="215" r="7" fill="#2f5d8a"/>
+<text x="806.2857142857142" y="220" font-size="15" fill="#2f5d8a" text-anchor="start" font-weight="600" >0.39 – 0.52</text>
+<text x="282" y="308" font-size="17" fill="#1f2328" text-anchor="end" font-weight="600" >Off-topic query</text>
+<text x="282" y="330" font-size="13" fill="#59636e" text-anchor="end" font-weight="400" >best match  ("zzqqxx", "weather in paris")</text>
+<line x1="545.1" y1="310" x2="601.7" y2="310" stroke="#59636e" stroke-width="3"/>
+<circle cx="545.1" cy="310" r="7" fill="#59636e"/>
+<circle cx="601.7" cy="310" r="7" fill="#59636e"/>
+<text x="655.4285714285714" y="315" font-size="15" fill="#59636e" text-anchor="start" font-weight="600" >0.26 – 0.32</text>
+<line x1="639.4" y1="62" x2="639.4" y2="360" stroke="#1f2328" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="647.4285714285714" y="56" font-size="14" fill="#1f2328" text-anchor="start" font-weight="700" >floor = 0.36</text>
+<text x="469.7142857142857" y="342" font-size="13" fill="#8c2d2d" text-anchor="middle" font-weight="400" font-style="italic">discarded</text>
+<text x="630.0" y="424" font-size="14" fill="#59636e" text-anchor="middle" font-weight="400" >cosine similarity between query and memory (voyage-4 embeddings)</text>
+<text x="630.0" y="448" font-size="13" fill="#59636e" text-anchor="middle" font-weight="400" font-style="italic">calibration on the author's own mail and calendar data</text>
+</svg>

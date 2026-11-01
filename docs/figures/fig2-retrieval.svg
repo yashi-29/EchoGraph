@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 400" font-family="-apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<rect width="1100" height="400" fill="#ffffff"/>
+<rect x="30" y="150" width="170" height="100" rx="7" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="46" y="178" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >natural-language</text>
+<text x="46" y="200" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >query</text>
+<rect x="250" y="40" width="330" height="150" rx="7" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.4"/>
+<text x="266" y="68" font-size="13" fill="#59636e" text-anchor="start" font-weight="700" letter-spacing="1">KEYWORD RETRIEVER</text>
+<text x="266" y="94" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >ILIKE on every term (up to 8)</text>
+<text x="266" y="116" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >ordered by recency</text>
+<text x="266" y="138" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >top 100 candidates</text>
+<rect x="250" y="220" width="330" height="140" rx="7" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1.4"/>
+<text x="266" y="248" font-size="13" fill="#59636e" text-anchor="start" font-weight="700" letter-spacing="1">SEMANTIC RETRIEVER</text>
+<text x="266" y="274" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >embed query (voyage-4, cached)</text>
+<text x="266" y="296" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >cosine distance, top 100</text>
+<text x="266" y="318" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >keep if sim &gt;= max(0.36, best - 0.18)</text>
+<rect x="650" y="130" width="230" height="140" rx="7" fill="#ffffff" stroke="#8c2d2d" stroke-width="1.4"/>
+<text x="666" y="158" font-size="13" fill="#59636e" text-anchor="start" font-weight="700" letter-spacing="1">RECIPROCAL RANK FUSION</text>
+<text x="666" y="184" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >score(d) = sum over</text>
+<text x="666" y="206" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >retrievers of</text>
+<text x="666" y="228" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >1 / (60 + rank(d))</text>
+<rect x="940" y="150" width="140" height="100" rx="7" fill="#ffffff" stroke="#1f2328" stroke-width="1.4"/>
+<text x="956" y="178" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >ranked hits +</text>
+<text x="956" y="200" font-size="15" fill="#1f2328" text-anchor="start" font-weight="400" >matched_by</text>
+<line x1="200" y1="190" x2="242.1" y2="124.3" stroke="#59636e" stroke-width="2"/><polygon points="248,115 237.0,121.0 247.1,127.5" fill="#59636e"/>
+<line x1="200" y1="210" x2="242.3" y2="280.6" stroke="#59636e" stroke-width="2"/><polygon points="248,290 247.5,277.5 237.2,283.7" fill="#59636e"/>
+<line x1="582" y1="115" x2="639.9" y2="167.6" stroke="#59636e" stroke-width="2"/><polygon points="648,175 643.9,163.2 635.8,172.0" fill="#59636e"/>
+<line x1="582" y1="295" x2="640.5" y2="233.0" stroke="#59636e" stroke-width="2"/><polygon points="648,225 636.1,228.9 644.8,237.1" fill="#59636e"/>
+<line x1="882" y1="200" x2="927.0" y2="200.0" stroke="#59636e" stroke-width="2"/><polygon points="938,200 927.0,194.0 927.0,206.0" fill="#59636e"/>
+</svg>
