@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 430" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1600" height="430" fill="#ffffff"/>
+  <rect x="160" y="123" width="1280" height="14" fill="#d9d6d4"/>
+  <g>
+    <circle cx="160" cy="130" r="72" fill="#f7931e"/>
+    <circle cx="480" cy="130" r="72" fill="#8038b4"/>
+    <circle cx="800" cy="130" r="72" fill="#e8417e"/>
+    <circle cx="1120" cy="130" r="72" fill="#0098db"/>
+    <circle cx="1440" cy="130" r="72" fill="#4cb53f"/>
+  </g>
+  <g font-size="64" font-weight="700" fill="#fff" text-anchor="middle">
+    <text x="160" y="152">1</text>
+    <text x="480" y="152">2</text>
+    <text x="800" y="152">3</text>
+    <text x="1120" y="152">4</text>
+    <text x="1440" y="152">5</text>
+  </g>
+  <g font-size="36" font-weight="700" text-anchor="middle">
+    <text x="160" y="250" fill="#c96f08">Connect</text>
+    <text x="480" y="250" fill="#8038b4">Ingest</text>
+    <text x="800" y="250" fill="#e8417e">Embed &amp; Index</text>
+    <text x="1120" y="250" fill="#0087c4">Retrieve &amp; Reason</text>
+    <text x="1440" y="250" fill="#3a9a2e">Confirm &amp; Act</text>
+  </g>
+  <g font-size="22" fill="#2b2b2b" text-anchor="middle">
+    <text x="160" y="295">Google sign-in for Gmail</text>
+    <text x="160" y="328">and Calendar, or upload</text>
+    <text x="160" y="361">PDFs, voice notes, bookmarks</text>
+
+    <text x="480" y="295">Background workers parse,</text>
+    <text x="480" y="328">clean and split every item</text>
+    <text x="480" y="361">into searchable memories</text>
+
+    <text x="800" y="295">Voyage AI turns each memory</text>
+    <text x="800" y="328">into a 1024-dim vector stored</text>
+    <text x="800" y="361">in PostgreSQL + pgvector</text>
+
+    <text x="1120" y="295">Keyword + semantic search,</text>
+    <text x="1120" y="328">merged with RRF, feeds the</text>
+    <text x="1120" y="361">LLM agent's tools</text>
+
+    <text x="1440" y="295">EchoGraph drafts the email</text>
+    <text x="1440" y="328">or event, then waits for</text>
+    <text x="1440" y="361">your approval to send</text>
+  </g>
+</svg>

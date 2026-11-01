@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 780" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="2" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#7b1d1d"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="780" fill="#ffffff"/>
+
+  <g>
+    <rect x="40" y="40" width="290" height="72" rx="20" fill="#7b1d1d"/>
+    <text x="185" y="88" font-size="34" font-weight="600" fill="#fff" text-anchor="middle">Your Data</text>
+    <rect x="40" y="130" width="290" height="470" rx="20" fill="#faf0f0" stroke="#7b1d1d" stroke-width="2"/>
+    <g font-size="22" fill="#2b2b2b" text-anchor="middle">
+      <rect x="60" y="160" width="250" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="185" y="197">Gmail</text>
+      <rect x="60" y="240" width="250" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="185" y="277">Google Calendar</text>
+      <rect x="60" y="320" width="250" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="185" y="357">PDF documents</text>
+      <rect x="60" y="400" width="250" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="185" y="437">Voice notes</text>
+      <rect x="60" y="480" width="250" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="185" y="517">Browser bookmarks</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="430" y="40" width="310" height="72" rx="20" fill="#7b1d1d"/>
+    <text x="585" y="88" font-size="34" font-weight="600" fill="#fff" text-anchor="middle">Ingestion</text>
+    <rect x="430" y="130" width="310" height="470" rx="20" fill="#faf0f0" stroke="#7b1d1d" stroke-width="2"/>
+    <g font-size="22" fill="#2b2b2b" text-anchor="middle">
+      <rect x="450" y="160" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="585" y="197">Redis job queue</text>
+      <rect x="450" y="240" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="585" y="277">Celery workers</text>
+      <rect x="450" y="320" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="585" y="357">Parse &amp; clean text</text>
+      <rect x="450" y="400" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="585" y="437">Whisper transcription</text>
+      <rect x="450" y="480" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="585" y="517">Split into memories</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="840" y="40" width="310" height="72" rx="20" fill="#7b1d1d"/>
+    <text x="995" y="88" font-size="34" font-weight="600" fill="#fff" text-anchor="middle">Memory Store</text>
+    <rect x="840" y="130" width="310" height="470" rx="20" fill="#faf0f0" stroke="#7b1d1d" stroke-width="2"/>
+    <g font-size="22" fill="#2b2b2b" text-anchor="middle">
+      <rect x="860" y="160" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="995" y="197">Voyage AI embeddings</text>
+      <rect x="860" y="240" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="995" y="277">PostgreSQL + pgvector</text>
+      <rect x="860" y="320" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="995" y="357">Memories + metadata</text>
+      <rect x="860" y="400" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="995" y="437">Knowledge graph</text>
+      <rect x="860" y="480" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="995" y="517">Chats &amp; pending drafts</text>
+    </g>
+  </g>
+
+  <g>
+    <rect x="1250" y="40" width="310" height="72" rx="20" fill="#7b1d1d"/>
+    <text x="1405" y="88" font-size="34" font-weight="600" fill="#fff" text-anchor="middle">EchoGraph</text>
+    <rect x="1250" y="130" width="310" height="470" rx="20" fill="#faf0f0" stroke="#7b1d1d" stroke-width="2"/>
+    <g font-size="22" fill="#2b2b2b" text-anchor="middle">
+      <rect x="1270" y="160" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="1405" y="197">FastAPI /api/v1</text>
+      <rect x="1270" y="240" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="1405" y="277">LLM agent (gpt-oss-120b)</text>
+      <rect x="1270" y="320" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="1405" y="357">Hybrid search (RRF)</text>
+      <rect x="1270" y="400" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="1405" y="437">Confirm before acting</text>
+      <rect x="1270" y="480" width="270" height="60" rx="12" fill="#fff" stroke="#d9aeb0" stroke-width="2"/><text x="1405" y="517">Web app: chat, graph…</text>
+    </g>
+  </g>
+
+  <g stroke="#7b1d1d" stroke-width="5" marker-end="url(#arr)">
+    <line x1="334" y1="365" x2="424" y2="365"/>
+    <line x1="744" y1="365" x2="834" y2="365"/>
+    <line x1="1154" y1="365" x2="1244" y2="365"/>
+  </g>
+
+  <path d="M1405 604 V670 H185 V612" fill="none" stroke="#7b1d1d" stroke-width="4" stroke-dasharray="14 10" marker-end="url(#arr)"/>
+  <rect x="455" y="648" width="700" height="44" fill="#ffffff"/>
+  <text x="805" y="680" font-size="24" font-weight="700" fill="#7b1d1d" text-anchor="middle">Approved actions only: send email · create / update calendar event</text>
+  <text x="800" y="735" font-size="19" fill="#777777" text-anchor="middle">Runs with Docker Compose · nginx serves the web app · connector tokens encrypted at rest</text>
+</svg>

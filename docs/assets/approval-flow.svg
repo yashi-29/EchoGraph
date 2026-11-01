@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 200" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1600" height="200" fill="#ffffff"/>
+  <polygon points="20,40 370,40 410,100 370,160 20,160" fill="#2f7ec7"/>
+  <polygon points="410,40 760,40 800,100 760,160 410,160 450,100" fill="#2a9a7b"/>
+  <polygon points="800,40 1150,40 1190,100 1150,160 800,160 840,100" fill="#d8263e"/>
+  <polygon points="1190,40 1540,40 1580,100 1540,160 1190,160 1230,100" fill="#f2a31b"/>
+  <g fill="#ffffff" text-anchor="middle">
+    <g font-size="34" font-weight="700">
+      <text x="195" y="92">1. You ask</text>
+      <text x="605" y="92">2. EchoGraph searches</text>
+      <text x="995" y="92">3. Draft shown</text>
+      <text x="1385" y="92">4. You approve</text>
+    </g>
+    <g font-size="21">
+      <text x="195" y="128">“Email my NOC to Aditya”</text>
+      <text x="605" y="128">Finds the NOC in your data</text>
+      <text x="995" y="128">Email + attachment, editable</text>
+      <text x="1385" y="128">Sent only after you confirm</text>
+    </g>
+  </g>
+</svg>
